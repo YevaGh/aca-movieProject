@@ -18,11 +18,11 @@ public class MovieService {
     }
 
     public void create(CreateMovie createMovie) {
-        if(movieRepository.findByTitle(createMovie.getTitle()).equals(Optional.empty())){
+        if(movieRepository.findByTitle(createMovie.getTitle()).isPresent()){
            throw new IllegalArgumentException();
         }
         movieRepository.save(createMovie);
     }
 
-    
+
 }

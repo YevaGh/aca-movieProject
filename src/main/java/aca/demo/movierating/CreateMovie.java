@@ -6,6 +6,4 @@ import lombok.Value;
 public class CreateMovie{
     String title;
     Genre genre;
-
-
 }
