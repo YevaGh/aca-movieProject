@@ -1,15 +1,13 @@
 package aca.demo.movierating;
 
+import aca.demo.movierating.movie.CreateMovie;
+import aca.demo.movierating.movie.MovieService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static aca.demo.movierating.Genre.*;
+import static aca.demo.movierating.movie.Genre.*;
 
 @SpringBootApplication
 @Slf4j
@@ -33,8 +31,6 @@ public class MovieRatingApplication {
 		log.debug(movieService.search(DRAMA).toString());
 		log.debug(movieService.search(ROMANCE).toString());
 		log.debug(movieService.search(COMEDY).toString());
-
-
 
 
 	}

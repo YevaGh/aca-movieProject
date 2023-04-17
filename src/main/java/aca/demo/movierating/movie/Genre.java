@@ -1,4 +1,4 @@
-package aca.demo.movierating;
+package aca.demo.movierating.movie;
 
 public enum Genre {
     DRAMA, COMEDY, HORROR, ROMANCE;
