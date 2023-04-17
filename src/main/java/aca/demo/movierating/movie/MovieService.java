@@ -1,11 +1,14 @@
-package aca.demo.movierating;
+package aca.demo.movierating.movie;
 
+import aca.demo.movierating.movie.CreateMovie;
+import aca.demo.movierating.movie.Genre;
+import aca.demo.movierating.movie.Movie;
+import aca.demo.movierating.movie.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 @Slf4j

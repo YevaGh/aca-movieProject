@@ -1,4 +1,4 @@
-package aca.demo.movierating;
+package aca.demo.movierating.movie;
 
 import lombok.Value;
 

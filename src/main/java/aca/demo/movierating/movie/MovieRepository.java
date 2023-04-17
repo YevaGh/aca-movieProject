@@ -1,5 +1,8 @@
-package aca.demo.movierating;
+package aca.demo.movierating.movie;
 
+import aca.demo.movierating.movie.CreateMovie;
+import aca.demo.movierating.movie.Genre;
+import aca.demo.movierating.movie.Movie;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
