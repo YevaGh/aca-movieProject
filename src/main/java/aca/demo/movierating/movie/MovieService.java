@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Component
@@ -27,5 +28,39 @@ public class MovieService {
         movieRepository.save(createMovie);
     }
 
+    public Movie getById(Long id) {
+        log.debug("Get movie by id");
+
+        if (movieRepository.findById(id)!=null){
+            return movieRepository.findById(id).get();
+        }
+        throw new MovieNotFoundException("No movie with given id");
+
+    }
+
+    public void update(Long id, UpdateMovie updateMovie) {
+        log.debug("Update movie by id");
+
+        if (movieRepository.findById(id)!=null){
+            movieRepository.findById(id).get().update(updateMovie);
+        }
+        throw new MovieNotFoundException("No movie with given id");
+    }
+
+    public void delete(Long id) {
+        log.debug("Delete movie by id");
+
+        if (movieRepository.findById(id)!=null){
+            movieRepository.delete(movieRepository.findById(id).get());
+        }
+        throw new MovieNotFoundException("No movie with given id");
+    }
+
+    public List<Movie> search(Genre genre, String title, LocalDate releasedBefore, LocalDate releasedAfter){
+        log.debug("Search movies by genre and/or title and/or released date");
+
+        return movieRepository.search(genre,title,releasedBefore,releasedAfter);
+
+    }
 
 }
