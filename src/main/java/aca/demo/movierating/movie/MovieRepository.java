@@ -59,10 +59,10 @@ public class MovieRepository {
 
     public List<Movie> search(Genre genre, String title, LocalDate releasedBefore, LocalDate releasedAfter) {
         log.debug("Movies filtered by genre and/or title and/or released date");
-        Stream<Movie> moviesToFilter = null;
+        Stream<Movie> moviesToFilter = movies.stream();
 
         if(genre!= null){
-            moviesToFilter = movies.stream().filter(g->g.getGenre()==genre);
+            moviesToFilter = moviesToFilter.filter(g->g.getGenre()==genre);
         }
         if(title!=null){
             moviesToFilter = moviesToFilter.filter(t->t.getTitle().equals(title));
