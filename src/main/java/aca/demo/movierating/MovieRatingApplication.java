@@ -27,10 +27,10 @@ public class MovieRatingApplication {
 //		movieService.create(c1);
 //		movieService.create(c2);
 //		movieService.create(c3);
-
-		log.debug(movieService.search(DRAMA).toString());
-		log.debug(movieService.search(ROMANCE).toString());
-		log.debug(movieService.search(COMEDY).toString());
+//
+//		log.debug(movieService.search(DRAMA).toString());
+//		log.debug(movieService.search(ROMANCE).toString());
+//		log.debug(movieService.search(COMEDY).toString());
 
 
 	}

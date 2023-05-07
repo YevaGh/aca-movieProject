@@ -15,6 +15,4 @@ public class UpdateMovie {
     LocalDate releasedAt;
     String director;
     double rating;
-
-
 }

@@ -38,11 +38,11 @@ public class MovieRepository {
         return byGenre;
     }
 
-    public void save(CreateMovie createMovie) {
-        log.debug("Creating and adding movie in list");
-
-        movies.add(new Movie(createMovie));
-    }
+//    public void save(CreateMovie createMovie) {
+//        log.debug("Creating and adding movie in list");
+//
+//        movies.add(new Movie(createMovie));
+//    }
 
     public void persist(Movie movie) {
         log.debug("Adding movie to the list");

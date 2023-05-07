@@ -1,7 +1,6 @@
 package aca.demo.movierating.movie;
 
-import aca.demo.movierating.movie.CreateMovie;
-import aca.demo.movierating.movie.Genre;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
