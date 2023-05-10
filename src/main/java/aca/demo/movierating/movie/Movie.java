@@ -1,10 +1,10 @@
 package aca.demo.movierating.movie;
 
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+
 
 import java.time.LocalDate;
 
@@ -40,6 +40,5 @@ public class Movie {
         this.releasedAt = updateMovie.getReleasedAt();
         this.director = updateMovie.getDirector();
         this.rating = updateMovie.getRating();
-
     }
 }

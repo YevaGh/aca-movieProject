@@ -1,6 +1,5 @@
 package aca.demo.movierating.movie;
 
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -19,6 +18,7 @@ public class MovieService {
     }
 
     public void create(CreateMovie createMovie) {
+
         if (movieRepository.findById(createMovie.getId()).isPresent()) {
             throw new IllegalArgumentException();
         }
@@ -57,5 +57,6 @@ public class MovieService {
         return movieRepository.search(genre, title, releasedBefore, releasedAfter);
 
     }
+
 
 }

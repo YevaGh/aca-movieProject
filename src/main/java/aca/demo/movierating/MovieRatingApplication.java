@@ -1,6 +1,5 @@
 package aca.demo.movierating;
 
-import aca.demo.movierating.movie.CreateMovie;
 import aca.demo.movierating.movie.MovieService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +22,7 @@ public class MovieRatingApplication {
 //		CreateMovie c1 = new CreateMovie("Forrest Gump",DRAMA);
 //		CreateMovie c2 = new CreateMovie("American Beauty",DRAMA);
 //		CreateMovie c3 = new CreateMovie("Horrible Bosses",COMEDY);
+
 
 //		movieService.create(c1);
 //		movieService.create(c2);

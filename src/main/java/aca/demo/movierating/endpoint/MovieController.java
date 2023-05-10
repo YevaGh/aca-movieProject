@@ -2,16 +2,12 @@ package aca.demo.movierating.endpoint;
 
 
 import aca.demo.movierating.movie.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.http.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -52,7 +48,5 @@ public class MovieController {
     public List<Movie> search(@RequestParam(required = false) Genre genre,@RequestParam(required = false) String title,@RequestParam(required = false) LocalDate releasedBefore,@RequestParam(required = false) LocalDate releasedAfter) {
         log.info("Search movie by given parameters");
         return movieService.search(genre, title, releasedBefore, releasedAfter);
-
     }
-
 }

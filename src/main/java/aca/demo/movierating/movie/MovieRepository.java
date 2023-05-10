@@ -5,11 +5,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 
 @Slf4j
 @Component
@@ -30,6 +33,7 @@ public class MovieRepository {
 
         return byId;
     }
+
     public List<Movie> findByGenre(Genre genre) {
         log.debug("Finding movies by genre");
 
@@ -38,11 +42,6 @@ public class MovieRepository {
         return byGenre;
     }
 
-//    public void save(CreateMovie createMovie) {
-//        log.debug("Creating and adding movie in list");
-//
-//        movies.add(new Movie(createMovie));
-//    }
 
     public void persist(Movie movie) {
         log.debug("Adding movie to the list");
@@ -78,5 +77,7 @@ public class MovieRepository {
 
         return filteredMovies;
     }
+
+
 
 }

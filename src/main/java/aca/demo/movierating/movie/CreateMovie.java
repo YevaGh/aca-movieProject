@@ -1,5 +1,6 @@
 package aca.demo.movierating.movie;
 
+
 import lombok.Builder;
 import lombok.Value;
 import lombok.extern.jackson.Jacksonized;
