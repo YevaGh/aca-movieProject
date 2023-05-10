@@ -46,18 +46,27 @@ public class ReviewRepository {
         }
     }
 
-    public List<Review> search(double rating, Instant createdBefore, Instant createdAfter) {
+    public List<Review> search(String description,Instant updatedBefore, Instant updatedAfter,Long userId,Double ratingHigherThan,Double ratingLowerThan) {
         log.debug("Reviews filtered by rating and/or date");
         Stream<Review> reviewsToFilter = reviews.stream();
 
-        if(rating != 0){
-            reviewsToFilter = reviewsToFilter.filter(g->g.getRating()==rating);
+        if(description != null){
+            reviewsToFilter = reviewsToFilter.filter(g->g.getDescription().equals(description));
         }
-        if(createdBefore!=null){
-            reviewsToFilter = reviewsToFilter.filter(rb-> createdBefore.isBefore(rb.getCreatedAt()));
+        if(updatedBefore!=null){
+            reviewsToFilter = reviewsToFilter.filter(ub-> updatedBefore.isBefore(ub.getUpdatedAt()));
         }
-        if(createdAfter!=null){
-            reviewsToFilter = reviewsToFilter.filter(rb-> createdAfter.isAfter(rb.getCreatedAt()));
+        if(updatedAfter!=null){
+            reviewsToFilter = reviewsToFilter.filter(ua-> updatedAfter.isAfter(ua.getUpdatedAt()));
+        }
+        if(userId!=null){
+            reviewsToFilter = reviewsToFilter.filter(uId-> uId.getUserId().equals(userId));
+        }
+        if(ratingHigherThan != null){
+            reviewsToFilter = reviewsToFilter.filter(rh-> rh.getRating()>ratingHigherThan);
+        }
+        if(ratingLowerThan != null){
+            reviewsToFilter = reviewsToFilter.filter(rl-> rl.getRating()<ratingLowerThan);
         }
 
         return reviewsToFilter.collect(Collectors.toList());
