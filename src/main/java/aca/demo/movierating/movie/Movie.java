@@ -1,8 +1,10 @@
 package aca.demo.movierating.movie;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -12,10 +14,14 @@ import java.time.LocalDate;
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Slf4j
+@Entity
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 public class Movie {
     @EqualsAndHashCode.Include
+    @Id
     private Long id;
     private String title;
+    @Enumerated(EnumType.STRING)
     private Genre genre;
     private LocalDate releasedAt;
     private String director;

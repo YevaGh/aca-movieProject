@@ -1,13 +1,11 @@
 package aca.demo.movierating.endpoint;
 
-import aca.demo.movierating.movie.CreateMovie;
-import aca.demo.movierating.movie.Genre;
-import aca.demo.movierating.movie.Movie;
-import aca.demo.movierating.movie.UpdateMovie;
 import aca.demo.movierating.review.CreateReview;
 import aca.demo.movierating.review.Review;
 import aca.demo.movierating.review.ReviewService;
 import aca.demo.movierating.review.UpdateReview;
+import jakarta.validation.Valid;
+import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -26,9 +24,9 @@ public class ReviewController {
     private final ReviewService reviewService;
 
     @PostMapping
-    public ResponseEntity create(@RequestBody CreateReview createReview) {
-        log.info("create new review for movie {} ",createReview.getMovieId());
-        reviewService.create(createReview);
+    public ResponseEntity create(@PathVariable Long movieId, @RequestBody @Valid CreateReview createReview) {
+        log.info("create new review for movie");
+        reviewService.create(movieId,createReview);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
@@ -40,7 +38,7 @@ public class ReviewController {
     }
 
     @PutMapping("{id}")
-    public void update(@PathVariable("movieId") Long movieId,@PathVariable("id") Long id,@RequestBody UpdateReview updateReview) {
+    public void update(@PathVariable("movieId") Long movieId,@PathVariable("id") Long id,@RequestBody @Valid UpdateReview updateReview) {
         log.info("Update review by Id");
         reviewService.update(id,movieId,updateReview);
     }

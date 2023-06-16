@@ -4,13 +4,14 @@ import aca.demo.movierating.movie.MovieService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import static aca.demo.movierating.movie.Genre.*;
 
 @SpringBootApplication
 @Slf4j
-@ConfigurationProperties(prefix = "application")
+
 
 public class MovieRatingApplication {
 	public static void main(String[] args) {
