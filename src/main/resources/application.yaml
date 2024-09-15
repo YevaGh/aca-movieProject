@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:postgresql://127.0.0.1:5432/movieR
     username: postgres
-    password: erikeva2
+    password:
     driver-class-name: org.postgresql.Driver
     hikari:
       max-lifetime: 580000
